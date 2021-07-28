@@ -22,117 +22,126 @@ Modified by Ahriika Jordan 2021
 public class JordanInteger2 {
 
     // setting length of names
-    private static int Ahriika = 7;
-    private static int Daniel = 6;
-    private static int Grace = 5;
+    private int ahriika = 0;
+    private int grace = 0;
 
-    // default name called will be "Ahriika"
-    public int getName(int Ahriika) {
-        return Ahriika;
+    /**
+     * Method with one argument, which is used to get and set the user's first name.
+     * 
+     * @param ahriika int
+     * @return returns the result.
+     */
+    public int getValue() {
+        return ahriika;
     }
 
-    public void setName(int Ahriika) {
-        this.Ahriika = Ahriika;
+    public void setValue(int ahriika) {
+        this.ahriika = ahriika;
     }
 
-    // This section establishes if the length of the name is Even, Odd, or Prime
+    /**
+     * Method to determine if the int is even, odd, and prime.
+     * 
+     * @param ahriika int
+     * @return returns true or false results
+     */
     public boolean isEven() {
-        if (Ahriika % 2 == 0)
+        if (ahriika % 2 == 0)
             return true;
         else
             return false;
     }
 
     public boolean isOdd() {
-        if (Ahriika % 2 != 0)
+        if (ahriika % 2 != 0)
             return true;
         else
             return false;
     }
 
     public boolean isPrime() {
-        for (int i = 2; i <= Ahriika / 2;) {
-            if (Ahriika % i == 0)
+        boolean prime1 = true;
+        for (int i = 2; i <= ahriika / 2;) {
+            if (ahriika % i == 0)
                 return false;
-            else
-                return true;
         }
-        return isPrime();
+        return prime1;
     }
 
-    // This section establishes if the length of the name is Even(int), Odd(int), or
-    // Prime(int)
-    public static void isEven(int Daniel) {
+    /**
+     * Method to determine if the int is even, odd, and prime.
+     * 
+     * @param grace Integer
+     * @return returns true or false results.
+     */
+    public static boolean isEven(Integer grace) {
 
-        boolean bool = (Daniel == 6);
-        if (Daniel % 2 == 0)
-            System.out.println(bool);
+        if (grace % 2 == 0)
+            return true;
         else
-            System.out.println(bool);
+            return false;
     }
 
-    public static void isOdd(int Daniel) {
+    public static boolean isOdd(Integer grace) {
 
-        boolean bool = (Daniel == 6);
-        if (Daniel % 2 != 0)
-            System.out.println(bool);
+        if (grace % 2 != 0)
+            return true;
         else
-            System.out.println(bool);
+            return false;
     }
 
-    public static void isPrime(int Daniel) {
-        boolean bool = (Daniel == 6);
-        for (int i = 2; i <= Daniel / 2;) {
-            if (Daniel % i == 0)
-                System.out.println(bool);
-            else
-                System.out.println(bool);
+    public static boolean isPrime(Integer grace) {
+        boolean prime = false;
+
+        for (int i = 2; i <= grace / 2;) {
+            if (grace % i == 0)
+                prime = true;
         }
+        return prime;
     }
 
-    // This section establishes if the length of the name is Even(Integer),
-    // Odd(Integer), or Prime(Integer)
-    public static void isEven(Integer Grace) {
+    /**
+     * Method to establish both int and Integer variables.
+     * 
+     * @param ahriika int
+     * @return returns int and Integer results for the variable 'ahriika'.
+     */
 
-        boolean bool = (Grace == 5);
-        if (Grace % 2 == 0)
-            System.out.println(bool);
-        else
-            System.out.println(bool);
+    public boolean equals(int variable) {
+        return variable == ahriika;
     }
 
-    public static void isOdd(Integer Grace) {
-
-        boolean bool = (Grace == 5);
-        if (Grace % 2 != 0)
-            System.out.println(bool);
-        else
-            System.out.println(bool);
+    public boolean equals(Integer variable) {
+        return variable == ahriika;
     }
 
-    public static void isPrime(Integer Grace) {
-        boolean bool = (Grace == 5);
-        for (int i = 2; i <= Grace / 2;) {
-            if (Grace % i == 0)
-                System.out.println(bool);
-            else
-                System.out.println(bool);
-        }
+    public String toString() {
+        String returnResult = "The number: " + getValue() + " is prime: " + isPrime() + ", is odd: " + isOdd()
+                + ", and is even: " + isEven();
+        return returnResult;
     }
 
-    // Displays the results of each name's length, and whether it is even, odd,
-    // and/or prime
+    /**
+     * Main class is used to create new instances.
+     * 
+     * @param JordanInteger2
+     * @return prints the results.
+     */
     public static void main(String[] args) {
+        JordanInteger2 ji2 = new JordanInteger2();
+        ji2.setValue(12);
+        System.out.println(ji2.getValue());
+        System.out.println(ji2.toString());
 
-        System.out.println("The length of the name 'Ahriika' is: " + Ahriika + ", the number is even: "
-                + (Ahriika % 2 == 0) + ", the number is odd: " + (Ahriika % 2 != 0) + ", the number is prime: "
-                + (Ahriika % Ahriika == 0));
+        JordanInteger2 ji3 = new JordanInteger2();
+        ji3.setValue(9);
+        System.out.println(ji3.getValue());
+        System.out.println(ji3.toString());
 
-        System.out.println("The length of the name 'Daniel' is: " + Daniel + ", the number is even: "
-                + (Daniel % 2 == 0) + ", the number is odd: " + (Daniel % 2 != 0) + ", the number is prime: "
-                + (Daniel % Daniel == 0));
+        Integer int1 = new Integer(13);
+        System.out.println(ji2.equals(int1));
 
-        System.out.println("The length of the name 'Grace' is: " + Grace + ", the number is even: " + (Grace % 2 == 0)
-                + ", the number is odd: " + (Grace % 2 != 0) + ", the number is prime: " + (Grace % Grace == 0));
+        Integer int2 = new Integer(12);
+        System.out.println(ji2.equals(int2));
     }
 }
