@@ -123,8 +123,8 @@ class JordanGradeBookApp2 extends JFrame implements ActionListener {
 
             } catch (IOException ex) {
                 ex.printStackTrace();
-            } finally {
-                System.out.println("save button pressed");
+            } catch (Exception exc) {
+                exc.printStackTrace();
             }
         }
 
